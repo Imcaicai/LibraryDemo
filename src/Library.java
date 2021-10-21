@@ -69,6 +69,7 @@ public class Library {
         //给书本按照分类排序
         libraryBook.sort(new Comparator<Book>() {
             int flag=0;
+            int a;
             @Override
             public int compare(Book b1, Book b2) {
                 if(b1.getLabel().compareTo(b2.getLabel()) > 0){
