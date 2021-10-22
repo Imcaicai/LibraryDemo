@@ -2,25 +2,24 @@ package model;
 
 
 public class NovelBook extends Book{
-    protected String author;
     protected String leadingMan;
     protected String leadingWoman;
-    public NovelBook(String bookName, int bookPage, float bookPrice, String remark, String label,boolean isBorrow,String author,String leadingMan,String leadingWoman) {
-        super(bookName, bookPage, bookPrice, remark, label,isBorrow);
-        NovelBook.this.author = author;
-        NovelBook.this.leadingMan = leadingMan;
-        NovelBook.this.leadingWoman = leadingWoman;
+
+    public NovelBook() {
+        super();
     }
 
-    public String getAuthor(){
-        return NovelBook.this.author;
+    public String getLeadingMan() {
+        return leadingMan;
+    }
+    public void setLeadingMan(String leadingMan) {
+        this.leadingMan = leadingMan;
     }
 
-    public String getLeadingMan(){
-        return NovelBook.this.leadingMan;
+    public String getLeadingWoman() {
+        return leadingWoman;
     }
-
-    public String getLeadingWoman(){
-        return NovelBook.this.leadingWoman;
+    public void setLeadingWoman(String leadingWoman) {
+        this.leadingWoman = leadingWoman;
     }
 }

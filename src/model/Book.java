@@ -2,60 +2,61 @@ package model;
 
 public class Book {
     public String bookName;
+    public String author;
     public int bookPage;
     public float bookPrice;
     public String remark;
     public String label;
-    public boolean isBorrow;
+    public boolean isBorrow = false;
 
-    public Book(String bookName,int bookPage,float bookPrice,String remark,String label,boolean isBorrow){
-        Book.this.bookName = bookName;
-        Book.this.bookPage = bookPage;
-        Book.this.bookPrice = bookPrice;
-        Book.this.remark = remark;
-        Book.this.label = label;
-        Book.this.isBorrow = isBorrow;
+    public String getBookName() {
+        return bookName;
+    }
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
     }
 
-    public String getBookName(){
-        return Book.this.bookName;
+    public String getAuthor(){
+        return author;
     }
-    public void setBookName(String bookName){
-        Book.this.bookName = bookName;
-    }
-
-    public int getBookPage(){
-        return Book.this.bookPage;
-    }
-    public void setBookPage(int bookPage){
-        Book.this.bookPage = bookPage;
+    public void setAuthor(String author){
+        this.author = author;
     }
 
-    public float getBookPrice(){
-        return Book.this.bookPrice;
+    public int getBookPage() {
+        return bookPage;
     }
-    public void setBookPrice(float bookPrice){
-        Book.this.bookPrice = bookPrice;
-    }
-
-    public String getRemark(){
-        return Book.this.remark;
-    }
-    public void setRemark(String remark){
-        Book.this.remark = remark;
+    public void setBookPage(int bookPage) {
+        this.bookPage = bookPage;
     }
 
-    public String getLabel(){
-        return Book.this.label;
+    public float getBookPrice() {
+        return bookPrice;
     }
-    public void setLabel(String label){
-        Book.this.label = label;
+    public void setBookPrice(float bookPrice) {
+        this.bookPrice = bookPrice;
     }
 
-    public boolean getIsBorrow(){
-        return Book.this.isBorrow;
+    public String getRemark() {
+        return remark;
     }
-    public void setIsBorrow(boolean isBorrow){
-        Book.this.isBorrow = isBorrow;
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
+
+    public String getLabel() {
+        return label;
+    }
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public boolean getIsBorrow() {
+        return isBorrow;
+    }
+    public void setIsBorrow(boolean borrow) {
+        isBorrow = borrow;
+    }
+
+
 }
