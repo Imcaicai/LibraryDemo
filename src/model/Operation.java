@@ -4,18 +4,26 @@ import java.util.Scanner;
 
 public class Operation {
     public static void main(String[] args) {
-        while (true) {
+        int op = 1;
+        int order;
+        Platform platform = new Platform();
+        Scanner sc = new Scanner(System.in);
+        while (op != 0) {
             new Menu1().menu();
             System.out.printf("请输入操作选项：");
-            Scanner sc = new Scanner(System.in);
-            int op = sc.nextInt();
+            op = sc.nextInt();
             switch (op){
                 case 1:
+                    order = platform.login();
+                    new Menu2().menu(order);
                     break;
                 case 2:
+                    order = platform.register();
+                    new Menu2().menu(order);
                     break;
                 case 0:
-                    break;
+                    System.out.println("欢迎下次使用本系统");
+                    return;
             }
         }
     }

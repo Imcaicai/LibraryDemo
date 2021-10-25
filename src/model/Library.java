@@ -17,7 +17,7 @@ public class Library {
     public void addBook(){
         Book book;
         Scanner sc = new Scanner(System.in);
-        System.out.println("请输入书的分类：");
+        System.out.printf("请输入书的分类：");
         String label = sc.next();
 
         if(label.equals("漫画书")){
@@ -41,6 +41,7 @@ public class Library {
             book = new Book();
         }
 
+        book.setLabel(label);
         System.out.printf("请输入要添加的书名：");
         book.setBookName(sc.next());
         System.out.printf("请输入作者名称：");
@@ -49,11 +50,8 @@ public class Library {
         book.setBookPage(sc.nextInt());
         System.out.printf("请输入书的价格：");
         book.setBookPrice(sc.nextFloat());
-        System.out.println("请输入书的备注：");
+        System.out.printf("请输入书的备注：");
         book.setRemark(sc.next());
-        System.out.println("请输入书的分类：");
-        book.setLabel(sc.next());
-
         libraryBook.add(book);
     }
 

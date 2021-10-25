@@ -4,18 +4,19 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class User{
+
     protected String username;
     protected String password;
+
+
     private int role;
     private static final int MAX_NUMBER = 4;
     ArrayList<Book> books = new ArrayList<>();
-    //创建管理员
-    private static final User manager = new User("manager","123456",1);
 
     public User(String username,String password,int role){
         this.username = username;
         this.password = password;
-        this.role = 0;
+        this.role = role;
     }
 
     //借书
@@ -83,4 +84,21 @@ public class User{
         System.out.println("------------------------------------------------------------------------");
     }
 
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getRole() {
+        return role;
+    }
 }
