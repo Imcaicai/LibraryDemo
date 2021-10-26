@@ -15,7 +15,9 @@ public class Operation {
             switch (op){
                 case 1:
                     order = platform.login();
-                    new Menu2().menu(order);
+                    if(order >= 0){
+                        new Menu2().menu(order);
+                    }
                     break;
                 case 2:
                     order = platform.register();

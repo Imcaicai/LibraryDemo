@@ -15,7 +15,7 @@ public class Menu3 {
             System.out.println("3.修改书籍              4.添加分类");
             System.out.println("5.删除分类              6.修改分类");
             System.out.println("7.查看所有书籍           8.查看所有用户信息");
-            System.out.println("0.退出管理员界面");
+            System.out.println("9.查看用户人数           0.退出管理员界面");
             System.out.println("-------------------------------------------------");
             System.out.printf("请输入操作选项：");
             op = sc.nextInt();
@@ -46,6 +46,8 @@ public class Menu3 {
                         platform.users.get(i).userInfo();
                     }
                     break;
+                case 9:
+                    System.out.println("用户人数为"+platform.users.size());
                 case 0:
                     return;
             }
