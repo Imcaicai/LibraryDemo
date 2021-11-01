@@ -1,5 +1,6 @@
 package model;
 
+import java.io.*;
 import java.util.*;
 
 public class Library {
@@ -53,6 +54,7 @@ public class Library {
         System.out.printf("请输入书的备注：");
         book.setRemark(sc.next());
         libraryBook.add(book);
+
     }
 
     //删除书籍
@@ -83,11 +85,9 @@ public class Library {
         Scanner sc = new Scanner(System.in);
         System.out.printf("请输入您要查找的书籍名称：");
         String bookName = sc.next();
-        System.out.println("请输入您要查找的书籍页数：");
-        int bookPage = sc.nextInt();
 
         for(int i = 0; i < libraryBook.size(); i++){
-            if(libraryBook.get(i).getBookName().equals(bookName) && libraryBook.get(i).getBookPage() == bookPage){
+            if(libraryBook.get(i).getBookName().equals(bookName)){
                 if(libraryBook.get(i).isBorrow)
                     System.out.println("状态：书籍被借出");
                 else
@@ -107,12 +107,9 @@ public class Library {
         System.out.println("----------------------------------------------");
         System.out.printf("请输入您要修改的书籍名称：");
         String bookName = sc.next();
-        System.out.printf("请输入您要修改的书籍页数：");
-        int bookPage = sc.nextInt();
         int index = -1;
         for(int i = 0; i < libraryBook.size(); i++) {
-            if(libraryBook.get(i).getBookName().equals(bookName) &&
-                    libraryBook.get(i).getBookPage() == bookPage){
+            if(libraryBook.get(i).getBookName().equals(bookName)){
                 index = i;
                 break;
             }
@@ -194,7 +191,7 @@ public class Library {
     //查看当前图书馆书籍信息
     public void booksInfo(){
         System.out.println("-----------------------------图书馆书籍信息-----------------------------");
-        for(int i = 0; i < libraryBook.size(); i++) {
+        /*for(int i = 0; i < libraryBook.size(); i++) {
             System.out.println("在库书籍 "+(i+1)+" : ");
             System.out.println("书籍作者："+libraryBook.get(i).getAuthor());
             System.out.println("书籍分类："+libraryBook.get(i).getLabel());
@@ -203,6 +200,12 @@ public class Library {
             System.out.println("书籍价格："+libraryBook.get(i).getBookPrice());
             System.out.println("书籍备注："+libraryBook.get(i).getRemark());
             System.out.printf("\n");
+        }*/
+        //反序列化
+
+        for(int i = 0; i < libraryBook.size(); i++){
+
+
         }
         System.out.println("在库书籍总数："+libraryBook.size());
         System.out.println("--------------------------------------------------------------------------");

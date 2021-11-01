@@ -3,10 +3,10 @@ package model;
 import java.util.Scanner;
 
 public class Operation {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         int op = 1;
         int order;
-        Platform platform = new Platform();
+        Platform platform = Platform.platform;
         Scanner sc = new Scanner(System.in);
         while (op != 0) {
             new Menu1().menu();

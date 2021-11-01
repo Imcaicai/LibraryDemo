@@ -1,14 +1,13 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class User{
+public class User implements Serializable {
 
-    protected String username;
-    protected String password;
-
-
+    private String username;
+    private String password;
     private int role;
     private static final int MAX_NUMBER = 4;
     ArrayList<Book> books = new ArrayList<>();
@@ -100,5 +99,10 @@ public class User{
 
     public int getRole() {
         return role;
+    }
+
+    @Override
+    public String toString() {
+        return "User [userName=" + username + ", password=" + password + "]";
     }
 }

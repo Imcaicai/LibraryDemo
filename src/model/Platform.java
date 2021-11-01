@@ -1,15 +1,16 @@
 package model;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Platform {
-    public ArrayList<User> users = new ArrayList<>();
+public class Platform{
     public static final Platform platform = new Platform();
-
+    public ArrayList<User> users = new ArrayList<>();
     //创建管理员
-    private static final User manager = new User("manager","123456",1);
-
+    private  User manager = new User("manager","123456",1);
     public Platform(){
         users.add(manager);
     }
@@ -21,8 +22,11 @@ public class Platform {
         String name = sc.next();
         System.out.printf("请输入密码：");
         String password = sc.next();
-        users.add(new User(name,password,0));
+        User user = new User(name,password,0);
+        users.add(user);
         System.out.println("注册成功！");
+
+
         return users.size()-1;
     }
 
@@ -34,6 +38,7 @@ public class Platform {
         System.out.printf("请输入密码：");
         String password = sc.next();
         for(int i = 0; i < users.size(); i++){
+            //System.out.println((users.get(i) == null));
             if(users.get(i).getUsername().equals(name)){
                 if(users.get(i).getPassword().equals(password)){
                     return i;

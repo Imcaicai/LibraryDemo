@@ -5,9 +5,8 @@ import java.util.Scanner;
 
 public class Menu2 {
 
-    public void menu(int order){
+    public void menu(int order) throws Exception{
 
-        Platform platform = Platform.platform;
         int op = 1;
         Scanner sc = new Scanner(System.in);
         while (op != 0) {
@@ -20,13 +19,13 @@ public class Menu2 {
             op = sc.nextInt();
             switch (op){
                 case 1:
-                    platform.users.get(order).borrowBook();
+                    Platform.platform.users.get(order).borrowBook();
                     break;
                 case 2:
-                    platform.users.get(order).returnBook();
+                    Platform.platform.users.get(order).returnBook();
                     break;
                 case 3:
-                    platform.users.get(order).userInfo();
+                    Platform.platform.users.get(order).userInfo();
                     break;
                 case 4:
                     if (order == 0){

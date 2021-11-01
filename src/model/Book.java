@@ -1,6 +1,9 @@
 package model;
 
-public class Book {
+import java.awt.*;
+import java.io.Serializable;
+
+public class Book implements Serializable{
     public String bookName;
     public String author;
     public int bookPage;
@@ -58,5 +61,8 @@ public class Book {
         isBorrow = borrow;
     }
 
-
+    public String toString(){
+        return "Book [bookName=" + bookName + ", label=" + label +
+                ", author=" + author + ", bookPage=" + bookPage + ", bookPrice=" + bookPrice + ", remark=" + remark + "]";
+    }
 }
